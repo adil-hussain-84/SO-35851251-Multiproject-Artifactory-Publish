@@ -1,0 +1,42 @@
+buildscript {
+	repositories {
+		jcenter()
+	}
+	dependencies {
+		classpath 'com.android.tools.build:gradle:1.5.0'
+		classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.0.0'
+	}
+}
+
+
+allprojects {
+
+    repositories {
+        jcenter()
+    }
+	
+	apply plugin: 'maven-publish'
+	apply plugin: 'com.jfrog.artifactory'
+}
+
+
+
+artifactoryPublish.skip=true
+
+artifactory {
+    contextUrl = 'http://192.168.99.100:32768/artifactory'
+    publish {
+        repository {
+            repoKey = 'libs-release-local'
+
+            username = 'admin'
+            password = 'password'
+        }
+        defaults {
+            publications('someOtherName', 'JavaPublication')
+            publishArtifacts = true
+            properties = ['qa.level': 'basic', 'dev.team': 'core']
+            publishPom = true
+        }
+    }
+}

@@ -1,0 +1,12 @@
+apply plugin: 'java'
+
+publishing {
+    publications {
+        JavaPublication(MavenPublication) {
+            groupId 'com.test'
+            artifactId 'foo'
+            version '1.0.0'
+            from components.java
+        }
+    }
+}

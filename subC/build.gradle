@@ -22,14 +22,3 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.2.1'
 }
-
-publishing {
-    publications {
-        SomePublication(MavenPublication) {
-            groupId 'com.test'
-            artifactId 'baz'
-            version '1.0.0'
-            artifact "$buildDir/outputs/aar/subC-release.aar"
-        }
-    }
-}

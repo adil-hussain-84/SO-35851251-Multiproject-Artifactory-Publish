@@ -9,12 +9,14 @@ buildscript {
 }
 
 allprojects {
+    apply plugin: 'com.jfrog.artifactory'
+
     repositories {
         jcenter()
     }
 
-    apply plugin: 'maven-publish'
-    apply plugin: 'com.jfrog.artifactory'
+    group = 'com.test'
+    version = '1.0.0'
 }
 
 artifactoryPublish.skip=true
@@ -38,4 +40,40 @@ artifactory {
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.8'
+}
+
+project('subA') {
+    apply plugin: 'maven-publish'
+
+    publishing {
+        publications {
+            SomePublication(MavenPublication) {
+                from components.java
+            }
+        }
+    }
+}
+
+project('subB') {
+    apply plugin: 'maven-publish'
+
+    publishing {
+        publications {
+            SomePublication(MavenPublication) {
+                from components.java
+            }
+        }
+    }
+}
+
+project('subC') {
+    apply plugin: 'maven-publish'
+
+    publishing {
+        publications {
+            SomePublication(MavenPublication) {
+                artifact "$buildDir/outputs/aar/subC-release.aar"
+            }
+        }
+    }
 }

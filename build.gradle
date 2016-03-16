@@ -15,8 +15,8 @@ allprojects {
         jcenter()
     }
 
-    group = 'com.mycompany.sdk'
-    version = '1.0.0'
+    group = "${projectGroupName}"
+    version = "${projectVersionName}"
 }
 
 artifactoryPublish.skip=true
@@ -49,6 +49,19 @@ project('Android') {
         publications {
             SomePublication(MavenPublication) {
                 artifact "$buildDir/outputs/aar/Android-release.aar"
+
+                //The publication doesn't know about our dependencies, so we have to manually add them to the pom
+                pom.withXml {
+                    def dependenciesNode = asNode().appendNode('dependencies')
+
+                    //Iterate over the compile dependencies (we don't want the test ones), adding a <dependency> node for each
+                    configurations.compile.allDependencies.each {
+                        def dependencyNode = dependenciesNode.appendNode('dependency')
+                        dependencyNode.appendNode('groupId', it.group)
+                        dependencyNode.appendNode('artifactId', it.name)
+                        dependencyNode.appendNode('version', it.version)
+                    }
+                }
             }
         }
     }

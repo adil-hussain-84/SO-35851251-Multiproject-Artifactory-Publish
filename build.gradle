@@ -22,12 +22,12 @@ allprojects {
 artifactoryPublish.skip=true
 
 artifactory {
-    contextUrl = 'http://localhost:8081/artifactory'
+    contextUrl = "${artifactory_url}"
     publish {
         repository {
             repoKey = 'libs-release-local'
-            username = 'admin'
-            password = 'password'
+            username = "${artifactory_username}"
+            password = "${artifactory_password}"
         }
         defaults {
             publications('SomePublication')

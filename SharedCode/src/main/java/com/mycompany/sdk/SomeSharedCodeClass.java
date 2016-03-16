@@ -1,4 +1,4 @@
-package com.test;
+package com.mycompany.sdk;
 
 public class SomeSharedCodeClass {
 

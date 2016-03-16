@@ -15,7 +15,7 @@ allprojects {
         jcenter()
     }
 
-    group = 'com.test'
+    group = 'com.mycompany.sdk'
     version = '1.0.0'
 }
 

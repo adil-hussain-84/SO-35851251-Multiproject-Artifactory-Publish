@@ -1,4 +1,4 @@
-package com.test.subc;
+package com.mycompany.sdk;
 
 import org.junit.Test;
 

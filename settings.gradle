@@ -1,2 +1,2 @@
 include ':subA'
-include ':subC'
+include ':Android'

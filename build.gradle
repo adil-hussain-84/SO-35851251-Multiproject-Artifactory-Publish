@@ -54,13 +54,13 @@ project('subA') {
     }
 }
 
-project('subC') {
+project('Android') {
     apply plugin: 'maven-publish'
 
     publishing {
         publications {
             SomePublication(MavenPublication) {
-                artifact "$buildDir/outputs/aar/subC-release.aar"
+                artifact "$buildDir/outputs/aar/Android-release.aar"
             }
         }
     }

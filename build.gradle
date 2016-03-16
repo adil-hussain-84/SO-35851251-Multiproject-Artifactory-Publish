@@ -9,13 +9,12 @@ buildscript {
 }
 
 allprojects {
-
     repositories {
         jcenter()
     }
-	
-	apply plugin: 'maven-publish'
-	apply plugin: 'com.jfrog.artifactory'
+
+    apply plugin: 'maven-publish'
+    apply plugin: 'com.jfrog.artifactory'
 }
 
 artifactoryPublish.skip=true
@@ -25,12 +24,11 @@ artifactory {
     publish {
         repository {
             repoKey = 'libs-release-local'
-
             username = 'admin'
             password = 'password'
         }
         defaults {
-            publications('JavaPublication')
+            publications('SomePublication')
             publishArtifacts = true
             properties = ['qa.level': 'basic', 'dev.team': 'core']
             publishPom = true

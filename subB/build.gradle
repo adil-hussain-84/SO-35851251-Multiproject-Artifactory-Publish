@@ -2,7 +2,7 @@ apply plugin: 'java'
 
 publishing {
     publications {
-        JavaPublication(MavenPublication) {
+        SomePublication(MavenPublication) {
             groupId 'com.test'
             artifactId 'bar'
             version '1.0.0'

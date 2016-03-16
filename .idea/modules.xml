@@ -4,8 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Android/Android.iml" filepath="$PROJECT_DIR$/Android/Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/SO-35851251-Multiproject-Artifactory-Publish.iml" filepath="$PROJECT_DIR$/SO-35851251-Multiproject-Artifactory-Publish.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SharedCode/subA.iml" filepath="$PROJECT_DIR$/SharedCode/subA.iml" />
-      <module fileurl="file://$PROJECT_DIR$/subC/subC.iml" filepath="$PROJECT_DIR$/subC/subC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SharedCode/SharedCode.iml" filepath="$PROJECT_DIR$/SharedCode/SharedCode.iml" />
     </modules>
   </component>
 </project>

@@ -54,18 +54,6 @@ project('subA') {
     }
 }
 
-project('subB') {
-    apply plugin: 'maven-publish'
-
-    publishing {
-        publications {
-            SomePublication(MavenPublication) {
-                from components.java
-            }
-        }
-    }
-}
-
 project('subC') {
     apply plugin: 'maven-publish'
 

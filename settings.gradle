@@ -1,3 +1,2 @@
 include ':subA'
-include ':subB'
 include ':subC'

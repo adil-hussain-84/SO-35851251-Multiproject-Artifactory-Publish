@@ -6,8 +6,8 @@
 
 # Build folders
 /build/
-/subA/build/
 /Android/build/
+/SharedCode/build/
 
 # IntelliJ (User-specific files):
 /.idea/dictionaries/

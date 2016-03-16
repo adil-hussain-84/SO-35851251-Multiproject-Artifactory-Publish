@@ -42,18 +42,6 @@ task wrapper(type: Wrapper) {
     gradleVersion = '2.8'
 }
 
-project('subA') {
-    apply plugin: 'maven-publish'
-
-    publishing {
-        publications {
-            SomePublication(MavenPublication) {
-                from components.java
-            }
-        }
-    }
-}
-
 project('Android') {
     apply plugin: 'maven-publish'
 
@@ -61,6 +49,18 @@ project('Android') {
         publications {
             SomePublication(MavenPublication) {
                 artifact "$buildDir/outputs/aar/Android-release.aar"
+            }
+        }
+    }
+}
+
+project('SharedCode') {
+    apply plugin: 'maven-publish'
+
+    publishing {
+        publications {
+            SomePublication(MavenPublication) {
+                from components.java
             }
         }
     }

@@ -8,7 +8,6 @@ buildscript {
 	}
 }
 
-
 allprojects {
 
     repositories {
@@ -19,12 +18,10 @@ allprojects {
 	apply plugin: 'com.jfrog.artifactory'
 }
 
-
-
 artifactoryPublish.skip=true
 
 artifactory {
-    contextUrl = 'http://192.168.99.100:32768/artifactory'
+    contextUrl = 'http://localhost:8081/artifactory'
     publish {
         repository {
             repoKey = 'libs-release-local'
@@ -33,10 +30,14 @@ artifactory {
             password = 'password'
         }
         defaults {
-            publications('someOtherName', 'JavaPublication')
+            publications('JavaPublication')
             publishArtifacts = true
             properties = ['qa.level': 'basic', 'dev.team': 'core']
             publishPom = true
         }
     }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.8'
 }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SO-35851251-Multiproject-Artifactory-Publish.iml" filepath="$PROJECT_DIR$/SO-35851251-Multiproject-Artifactory-Publish.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subA/subA.iml" filepath="$PROJECT_DIR$/subA/subA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subB/subB.iml" filepath="$PROJECT_DIR$/subB/subB.iml" />
+    </modules>
+  </component>
+</project>

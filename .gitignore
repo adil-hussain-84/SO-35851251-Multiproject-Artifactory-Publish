@@ -1,2 +1,29 @@
-.gradle
-build/
+.gradle/
+.metadata/
+.recommenders/
+/bin/
+/local.properties
+
+# Build folders
+/build/
+/subA/build/
+/subB/build/
+/subC/build/
+
+# IntelliJ (User-specific files):
+/.idea/dictionaries/
+/.idea/tasks.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
+
+# IntelliJ Config (Sensitive or high-churn files):
+/.idea/dataSources.ids
+/.idea/dataSources.local.xml
+/.idea/dataSources.xml
+/.idea/dynamic.xml
+/.idea/sqlDataSources.xml
+/.idea/uiDesigner.xml
+
+# IntelliJ Config (Gradle files):
+/.idea/gradle.xml
+/.idea/libraries/
